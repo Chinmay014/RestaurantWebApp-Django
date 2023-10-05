@@ -12,7 +12,7 @@ STATUS = (
     (0,"Unavailable"),
     (1,"Available")
 )
-
+# I changed 'item' to 'Item' AFTER generating database. Let us see if it creates any issues later on.
 class Item(models.Model):
     meal = models.CharField(max_length=80,unique=True)
     description = models.CharField(max_length=2000)
