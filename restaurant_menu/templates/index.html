@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Hi</title>
+    <title>Welcome to Pizza Corner!</title>
 </head>
 <body>
     <h1>Menu</h1>
@@ -10,10 +10,10 @@
             {% for row in item_list %}
                 {% if row.meal_type == meal.0 %}
                     {% if row.status == 0 %}
-                        <p><b><del>{{ row.meal }}</del></b></p>
+                        <a href="{% url 'menu_item' row.pk %}"><p><b><del>{{ row.meal }}</del></b></p></a>
                         <p>{{ row.description }}</p>
                     {% else %}
-                        <p><b>{{ row.meal }}</b></p>
+                        <a href="{% url 'menu_item' row.pk %}"><p><b>{{ row.meal }}</b></p></a>
                         <p>{{ row.description }}</p>
                     {% endif %}
                 {% endif %}    
